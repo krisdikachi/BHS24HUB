@@ -22,7 +22,7 @@ export default function AboutPage() {
         <p style={{ lineHeight: '1.6', textAlign: 'justify', marginTop: '1rem' }}>
           This platform provides a digital catalog of books, articles, and academic terms. 
           Whether you're looking for definitions, textbook-style explanations, or AI-generated content to better understand a topic, 
-          we’ve got you covered.
+          we've got you covered.
         </p>
 
         <p style={{ lineHeight: '1.6', textAlign: 'justify', marginTop: '1rem' }}>
