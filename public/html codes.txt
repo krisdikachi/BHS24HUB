@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>   BHS24 HUB </title>
+    <link rel="shortcut icon" href="/IMG-20250331-WA0003~2.jpg" type="image/x-icon">
+   
+    
+
+   
+<h1><img src="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\IMG-20250331-WA0003~2.jpg" alt="Icon" style="width: 34px; vertical-align: middle;">BHS24 HUB</h1>
+    <div style="background-color: slateblue; border-radius: 10px;">
+        <h1> <b style="font: caption; font-size: 25px;"> Welcome to <br>
+           <div style="color: skyblue;">BHS24 HUB</div>
+            Where Education Meets <br>
+            Excellence!</b> <br>
+            <h2 style="font: caption; font-size: 18px;">
+                We are committed to delivering high-quality educational novel that meet the evolving needs of students.
+            </h2>
+        </div>
+    
+</head>
+<body> 
+        <div style="background-color: slateblue; font: caption;border-radius: 10px;">
+            <h3 style="color: skyblue;">BHS24 HUB</h3> <br>
+            <h3>
+BHS24 HUB,Welcome to BHS24 HUB,a provider of educational novels for students.BHS24 HUB stands
+for Baptist High School 24hours Reading Hubby founded with a vision to enhance student's logical
+reasoning through novel reading thereby making your child/ward to find reading and learning more
+interesting and fun.
+            </h3> <br>
+        </div>
+
+        <div style="background-color: slateblue; font: caption; border-radius: 10px;">
+            <h3 style="color: skyblue;">Our Mission</h3>
+            <h3>
+                To establish a reading habit for young secondary school students ranging from JS1-SS3,
+                We also made it available for adults who will find interest in reading some of the books.
+            </h3> <br>
+
+<h3 style="color: skyblue;">Our Vision</h3>
+<h3>
+    To become on of the leading provider in providing educational novels for your kids to enhance their logical
+    and verbal reasoning,and also to form a reading habit for them. 
+</h3>
+
+        </div>
+
+       <div style="font-size: 20px; font: caption;border-radius: 10px; background-color:yellowgreen;">
+           <h1 style="font: caption; font-size: 25px; color: white;">Here are list of our books;</h1>
+
+        <a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\10747-the-turn-of-the-screw-henry-james.pdf" target="blank">The turn of the screw</a> <br>
+  <a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\1. Alice's Adventures in Wonderland Author Lewis Carroll.pdf" target="blank"> Alice's Adventures in Wonderland</a><br>
+  <a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\1. The Hound of the Baskervilles Author Arthur Conan Doyle.pdf" target="blank">The Hound of the Baskervilles</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\1. The Metamorphosis, Franz Kafka.pdf" target="blank">The Metamorphosis</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\2. The Murders in the Rue Morgue Author Edgar Allan Poe.pdf" target="blank">The Murders in the Rue Morgue</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\2. Treasure Island Author Robert Louis Stevenson (1).pdf" target="blank">Treasure Island</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\2. Twenty Years After, Alexandre Dumas and Auguste Maquet.pdf" target="blank">Twenty Years After<a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\3. Little Women Author Louisa May Alcott-compressed.pdf" target="blank">Little Women</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\3. The Count of Monte Cristo, Alexandre Dumas.pdf" target="blank">The Count of Monte Cristo</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\4. Anne of Green Gables Author L. M. Montgomery.pdf" target="blank">Anne of Green Gables</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\4. Death in Venice, Thomas Mann.pdf" target="blank">Death in Venice</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\5. Whose Body Author Dorothy L. Sayers.pdf" target="blank"> Whose Body</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\5. Winnie The Pooh Author A. A.Milne.pdf" target="blank">Winnie The Pooh</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\7. The Call of the Wild Author Jack London.pdf" target="blank">The Call of the Wild</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\7. The Jungle Book Author Rudyard Kipling.pdf" target="blank">The Jungle Book</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\8. Pride and Prejudice Author Jane Austen-compressed.pdf" target="blank">Pride and Prejudice</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\8. The Black Arrow. A Tale of the Two Roses, Robert Louis Stevenson.pdf" target="blank">The Black Arrow</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\9. The Canterville Ghost, Oscar Wilde.pdf" target="blank">The Canterville Ghost</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\9. The Prisoner of Zenda Author Anthony Hope-compressed.pdf" target="blank">The Prisoner of Zenda</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\10. Heart of Darkness, Joseph Conrad.pdf" target="blank">Heart of Darkness</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\10. King Solomon's Mines, H. Rider Haggard.pdf" target="blank">King Solomon's Mines</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\10. Peter and Wendy Author James Matthew Barrie-compressed.pdf" target="blank"> Peter and Wendy</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\10. The Woman in White, Wilkie Collins.pdf" target="blank">The Woman in White</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\12. In Search of the Castaways, Jules Verne.pdf" target="blank">In Search of the Castaways</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\13. She Author H. Rider Haggard.pdf" target="blank"> She</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\13. The Red House Mystery Author A.A. Milne.pdf" target="blank">The Red House Mystery</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\14. The Mystery of Orcival Author Emile Gaboriau.pdf" target="blank">The Mystery of Orcival</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\15. Journey to the Center of the Earth, Jules Verne.pdf" target="blank">Journey to the Center of the Earth</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\15. Speedy Death Author Gladys Mitchell-compressed (1).pdf" target="blank"> Speedy Death</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\15. The Mystery of the Yellow Room Author Gaston Leroux.pdf" target="blank">The Mystery of the Yellow Room</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\16. Red Harvest Author Dashiel Hammett.pdf" target="blank">Red Harvest</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\10732-the-adventures-of-tom-sawyer-mark-twain.pdf" target="blank">the-adventures-of-tom-sawyer</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\a-christmas-carol-charles-dickens.pdf" target="blank">a-christmas-carol</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\a-tale-of-two-cities-charles-dickens.pdf" target="blank">a-tale-of-two-cities</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\Achebe Chinua - Things Fall Apart.pdf" target="blank">Things Fall Apart</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\poor-folk-fyodor-dostoyevsky (1).pdf" target="blank">poor-folk</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\Raffles The Amateur Cracksman, E.W. Hornung.pdf" target="blank"> The Amateur Cracksman</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\the-iron-heel-jack-london.pdf" target="blank">iron-heel</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\THE-LEKKI-HEADMASTER.pdf" target="blank">THE-LEKKI-HEADMASTER</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\the-three-musketeers-alejandro-dumas.pdf"  target="blank">the-three-musketeers</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\the-time-machine-h-g-wells.pdf" target="blank">the-time-machine</a><br>
+<a href="C:\Users\USER\Desktop\HTML\DGD\FIRST CLASS\white-nights-fiodor-dostoievski.pdf" target="blank">white-nights</a><br></a>
+</div>
+
+<h1 style="color: yellowgreen; font: caption; font-size: 30px; text-align: center;">Contact Us <br>
+now</h1><br>
+<h2 style="text-align: center; font-size: 15px; font: caption;">We'd love to hear from you! Please share your reviews and opinion.</h2>
+
+<br>
+<div style="background-color: yellowgreen; border-radius: 10px;">
+<h2 style="color: white; font: caption; font-size: 20px;">Contact Us</h2>
+<h2 style="color: white;">Email: talented9217@gmail.com <br>
+Phone: +2349132162076
+</h2>
+</div>
+
+
+
+</div>
+</body>
+</html>
