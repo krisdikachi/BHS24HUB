@@ -16,7 +16,7 @@ const Footer: React.FC = () => (
       <a href="/about/news" className="hover:underline font-semibold">News</a>
     </div>
     <div className="mt-4 text-sm text-emerald-100">
-      &copy; {new Date().getFullYear()} BHS24HUB. All rights reserved.
+      &copy; {new Date().getFullYear()} ATL GROUPS. All rights reserved.
     </div>
   </footer>
 );

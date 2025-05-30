@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'; // ✅ Use only this one
 
 const heroImages = [
   '/lib5.png',
-  '/lib2.jpg',
+  '/lib6.png',
   '/lib4.png',
 ];
 

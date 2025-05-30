@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         subject: "New Feedback Received",
         text: comment,
       });
-    } catch (e) {
+    } catch {
       // Ignore email errors for now
     }
 
