@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: "Method Not Allowed" });
     }
 
-    const client = new InferenceClient("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"); // Replace with your actual API key
+    const client = new InferenceClient(process.env.HUGGING_FACE_API); // Use API key from environment variable
 
     try {
         const chatCompletion = await client.chatCompletion({
