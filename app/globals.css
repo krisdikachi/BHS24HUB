@@ -17,6 +17,10 @@
   }
 }
 
+/* styles/globals.css */
+.font-cursive {
+  font-family: cursive;
+}
 
 body {
  background-color: white;
@@ -130,10 +134,47 @@ background-color: #50c87886;
   gap: 20px; /* Space between items */
   text-align: center; /* Center text */
 }
+.NavBarParent{
+  box-shadow: white 0px 0px 10px; 
+}
+
+
+.novel-3d {
+  background: linear-gradient(135deg, #e0ffe7 60%, #b2f5ea 100%);
+  box-shadow: 0 8px 24px rgba(44, 204, 113, 0.15), 0 1.5px 0 #2ecc71 inset;
+  border-radius: 1.2rem;
+  transform: perspective(600px) rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid #2ecc71;
+}
+.novel-3d:hover {
+  transform: perspective(600px) rotateY(0deg) rotateX(0deg) scale(1.04);
+  box-shadow: 0 16px 32px rgba(44, 204, 113, 0.25), 0 2px 0 #2ecc71 inset;
+}
+
+
+/* styles/globals.css */
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease;
+}
+
+/* styles/globals.css */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: none;}
+}
+.animate-fade-in {
+  animation: fade-in 0.25s ease;
+}
+
 /* Responsive Adjustments (optional) */
 @media (max-width: 768px) {
   .hero-image {
-    height: 250px;
+    /* height: 250px; */
   }
 
   .book-iframe {

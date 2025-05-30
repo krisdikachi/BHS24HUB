@@ -3,7 +3,12 @@ import Navbar from "@/component/navbar";
 import React, { useEffect, useState } from "react";
 
 const Books = () => {
-  const [pdfFiles, setPdfFiles] = useState([]);
+  interface PdfFile {
+    name: string;
+    path: string;
+  }
+
+  const [pdfFiles, setPdfFiles] = useState<PdfFile[]>([]);
 useEffect(() => {
   const fetchPdfs = async () => {
     const response = await fetch("/api/get-pdfs");

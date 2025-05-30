@@ -31,7 +31,7 @@ export default function DefinePage() {
       } else {
         setTextbookExplanation('Failed to fetch Wikipedia data.');
       }
-    } catch (err) {
+    } catch {
       setTextbookExplanation('Error fetching Wikipedia data.');
     }
 
@@ -50,7 +50,7 @@ export default function DefinePage() {
       } else {
         setSchoolDefinition('Failed to fetch dictionary data.');
       }
-    } catch (err) {
+    } catch {
       setSchoolDefinition('Error fetching dictionary data.');
     }
 
