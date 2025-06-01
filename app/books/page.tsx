@@ -73,7 +73,7 @@ const Books = () => {
               <div
                 className="book-item mb-8"
                 key={index}
-                ref={el => (bookRefs.current[index] = el)}
+                ref={el => { bookRefs.current[index] = el; }}
                 id={pdf.name.replace(/\s+/g, "-").toLowerCase()}
               >
                 <h3 className="book-header text-xl font-bold text-emerald-700 mb-2">{pdf.name}</h3>
