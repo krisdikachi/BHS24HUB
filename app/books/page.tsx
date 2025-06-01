@@ -37,21 +37,23 @@ const Books = () => {
       <Navbar />
       <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto">
         {/* Sidebar for desktop */}
-        <aside className="hidden md:block md:w-1/4 bg-emerald-50 p-6 rounded-l-2xl shadow-lg sticky top-24 h-fit self-start">
-          <h3 className="text-lg font-bold text-emerald-700 mb-4">Book List</h3>
-          <ul className="space-y-2">
-            {pdfFiles.map((pdf, idx) => (
-              <li key={idx}>
-                <button
-                  className="w-full text-left px-3 py-2 rounded hover:bg-emerald-100 transition text-emerald-700 font-semibold"
-                  onClick={() => setSelectedBook(pdf.name)}
-                >
-                  {pdf.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </aside>
+      {/* // ...existing code... */}
+<aside className="hidden md:block md:w-1/4 bg-emerald-50 p-6 rounded-l-2xl shadow-lg sticky top-24 h-[70vh] self-start overflow-y-auto">
+  <h3 className="text-lg font-bold text-emerald-700 mb-4">Book List</h3>
+  <ul className="space-y-2">
+    {pdfFiles.map((pdf, idx) => (
+      <li key={idx}>
+        <button
+          className="w-full text-left px-3 py-2 rounded hover:bg-emerald-100 transition text-emerald-700 font-semibold"
+          onClick={() => setSelectedBook(pdf.name)}
+        >
+          {pdf.name}
+        </button>
+      </li>
+    ))}
+  </ul>
+</aside>
+{/* // ...existing code... */}
         {/* Dropdown for mobile */}
         <div className="block md:hidden w-full px-4 mt-4">
           <select

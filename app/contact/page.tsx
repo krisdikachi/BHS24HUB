@@ -7,8 +7,8 @@ import React from 'react';
 const contactInfo = [
     {
         label: 'Email',
-        value: 'Andro**group@gmail.com',
-        link: 'Androtechlistgroup@gmail.com',
+        value: 'Andro**p@gmail.com',
+        link: 'mailto:Androtechlistgroup@gmail.com',
         icon: (
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M4 4h16v16H4z" stroke="none" />
