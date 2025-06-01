@@ -34,9 +34,9 @@ body {
   height: 600px;
   position: relative; /* For positioning the content overlay */
 }
-.pHERO{
+/* .pHERO{
 background-color: #50c87886;
-}
+} */
 
 .hero-container {
   display: flex;

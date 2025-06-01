@@ -2,6 +2,7 @@
 "use client";
 import Navbar from '@/component/navbar';
 import React, { useState } from 'react';
+import Footer from '@/component/Footer';
 
 export default function DefinePage() {
   const [term, setTerm] = useState('');
@@ -134,6 +135,7 @@ export default function DefinePage() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

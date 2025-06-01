@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Navbar from "@/component/navbar";
+import Footer from "@/component/Footer";
 
 const ChatAI = () => {
   const [input, setInput] = useState("");
@@ -65,6 +66,7 @@ const ChatAI = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

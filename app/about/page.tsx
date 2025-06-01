@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from '@/component/navbar';
 // import Image from 'next/image';
+import Footer from '@/component/Footer';
 export default function AboutPage() {
   return (
     <div>
@@ -41,6 +42,8 @@ export default function AboutPage() {
           Thank you for using our platform!
         </p>
       </div>
+      <Footer />
     </div>
+    
   );
 }

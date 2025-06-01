@@ -81,10 +81,10 @@ const Navbar = () => {
         {/* <li><a href="/about/team" className="hover:text-emerald-600">Our Team</a></li> */}
         <li><a href="/comments" className="hover:text-emerald-600">Reviews</a></li>
         <li><a href="/about" className="hover:text-emerald-600">About</a></li>
-        <li><a href="/about/contact" className="hover:text-emerald-600">Contact Us</a></li>
+        <li><a href="/contact" className="hover:text-emerald-600">Contact Us</a></li>
       </ul>
     </div>
-    <div>
+    {/* <div>
       <h4 className="font-bold text-emerald-700 mb-2">Resources</h4>
       <ul className="space-y-2">
         <li><a href="/about/careers" className="hover:text-emerald-600">Careers</a></li>
@@ -92,7 +92,7 @@ const Navbar = () => {
         <li><a href="/about/partners" className="hover:text-emerald-600">Partners</a></li>
         <li><a href="/about/news" className="hover:text-emerald-600">News</a></li>
       </ul>
-    </div>
+    </div> */}
   </div>
 )}
           </div>
@@ -143,13 +143,13 @@ const Navbar = () => {
                   <div>
                     <h4 className="font-bold text-emerald-700 mb-2">Quick Links</h4>
                     <ul className="space-y-2">
-                      <li><a href="/about/team" className="hover:text-emerald-600">Our Team</a></li>
-                      <li><a href="/about/mission" className="hover:text-emerald-600">Mission</a></li>
-                      <li><a href="/about/history" className="hover:text-emerald-600">History</a></li>
-                      <li><a href="/about/contact" className="hover:text-emerald-600">Contact Us</a></li>
+                      <li><a href="/comments" className="hover:text-emerald-600">Reviews</a></li>
+                      <li><a href="/about" className="hover:text-emerald-600">About</a></li>
+                      
+                      <li><a href="/contact" className="hover:text-emerald-600">Contact Us</a></li>
                     </ul>
                   </div>
-                  <div>
+                  {/* <div>
                     <h4 className="font-bold text-emerald-700 mb-2">Resources</h4>
                     <ul className="space-y-2">
                       <li><a href="/about/careers" className="hover:text-emerald-600">Careers</a></li>
@@ -157,7 +157,7 @@ const Navbar = () => {
                       <li><a href="/about/partners" className="hover:text-emerald-600">Partners</a></li>
                       <li><a href="/about/news" className="hover:text-emerald-600">News</a></li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </nav>

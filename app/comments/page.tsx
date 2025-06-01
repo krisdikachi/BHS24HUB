@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/component/navbar";
 import Feedback from "@/component/Feedback";
+import Footer from "@/component/Footer";
 
 interface Comment {
   comment: string;
@@ -33,6 +34,7 @@ export default function CommentsPage() {
     </section>
 
     <Feedback />
+    <Footer />
 
     </>
   );

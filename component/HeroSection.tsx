@@ -40,7 +40,7 @@ const HeroSection = () => {
         />
         <div className="hero-content text-white text-center mt-0">
           <h1 className="text-4xl font-bold mb-2">Welcome to Our Educational Library Platform</h1>
-          <p className="mb-4 pHERO">
+          <p className="mb-4 bg-gradient-to-br from-emerald-50 to-emerald-100 text-emerald-800 rounded-sm">
             Explore a vast collection of educational resources and engage in
             knowledge-rich experiences.
           </p>
