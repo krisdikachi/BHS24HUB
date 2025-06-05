@@ -12,30 +12,43 @@ interface Comment {
 export default function CommentsPage() {
   const [comments, setComments] = useState<Comment[]>([]);
 
-  useEffect(() => {
-    fetch("/api/feedback")
-      .then(res => res.json())
-      .then(data => setComments(data));
-  }, []);
+ useEffect(() => {
+  fetch("/api/feedback")
+    .then(res => res.json())
+    .then(data => {
+      if (Array.isArray(data)) {
+        setComments(data.slice(0, 2));
+      } else {
+        setComments([]); // fallback to empty array if error or not array
+        console.error("API did not return an array:", data);
+      }
+    })
+    .catch(err => {
+      setComments([]);
+      console.error("Failed to fetch comments:", err);
+    });
+}, []);
 
-  return (<>
-    <Navbar />
-
-    <section className="max-w-2xl mx-auto py-10 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-emerald-700">All Comments</h1>
-      <ul className="space-y-4">
-        {comments.map((c, i) => (
-          <li key={i} className="bg-white bg-opacity-80 rounded p-3 text-gray-800 shadow">
-            <span className="block">{c.comment}</span>
-            <span className="block text-xs text-gray-500 mt-1">{new Date(c.date).toLocaleString()}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <Feedback />
-    <Footer />
-
+  return (
+    <>
+      <Navbar />
+      <section className="max-w-2xl mx-auto py-10 px-4">
+        <h1 className="text-3xl font-bold mb-6 text-emerald-700">All Comments</h1>
+        <ul className="space-y-4">
+  {Array.isArray(comments) && comments.length > 0 ? (
+    comments.map((c, i) => (
+      <li key={i} className="rounded p-3 text-gray-800 bg-emerald-50 shadow">
+        <span className="block">{c.comment}</span>
+        <span className="block text-xs text-gray-500 mt-1">{new Date(c.date).toLocaleString()}</span>
+      </li>
+    ))
+  ) : (
+    <li className="text-gray-500">No comments yet.</li>
+  )}
+</ul>
+      </section>
+      <Feedback />
+      <Footer />
     </>
   );
 }

@@ -11,30 +11,41 @@ const Feedback = () => {
   const [comment, setComment] = useState("");
   const [msg, setMsg] = useState("");
   const [comments, setComments] = useState<Comment[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("/api/feedback")
+    const baseUrl =
+      typeof window === "undefined"
+        ? process.env.NEXT_PUBLIC_SITE_URL || "https://bhs24hub.vercel.app"
+        : "";
+    fetch(`${baseUrl}/api/feedback`)
       .then(res => res.json())
-      .then(data => setComments(data.slice(0, 2)));
+      .then(data => setComments(data.slice(0, 2)))
+      .catch(err => console.error("Failed to fetch comments:", err));
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMsg("");
-    const res = await fetch("/api/feedback", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ comment }),
-    });
-    if (res.ok) {
-      setMsg("Thank you for your feedback!");
-      setComment("");
-      fetch("/api/feedback")
-        .then(res => res.json())
-        .then(data => setComments(data.slice(0, 2)));
-    } else {
-      setMsg("Failed to send feedback.");
-    }
+    setLoading(true);
+   const res = await fetch("/api/feedback", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ comment }),
+});
+const result = await res.json();
+setLoading(false);
+
+if (res.ok) {
+  setMsg("Thank you for your feedback!");
+  setComment("");
+  fetch("/api/feedback")
+    .then(res => res.json())
+    .then(data => setComments(data.slice(0, 2)));
+} else {
+  setMsg(result.error || "Failed to send feedback.");
+  console.error("Feedback API error:", result.error);
+}
   };
 
   return (
@@ -49,8 +60,6 @@ const Feedback = () => {
           className="object-cover w-full h-full"
           style={{ minHeight: "100%" }}
         />
-        {/* Optional overlay for effect */}
-        {/* <div className="absolute inset-0 bg-emerald-300 g-opacity-20"></div> */}
       </div>
       {/* Right: Form and Comments */}
       <div className="md:w-1/2 w-full flex flex-col justify-center p-6 md:p-10">
@@ -66,8 +75,9 @@ const Feedback = () => {
           <button
             type="submit"
             className="bg-white text-emerald-600 font-bold px-6 py-2 rounded hover:bg-emerald-100 transition"
+            disabled={loading}
           >
-            Send Feedback
+            {loading ? "Sending..." : "Send Feedback"}
           </button>
           {msg && <div className="text-white text-center">{msg}</div>}
         </form>

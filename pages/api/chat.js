@@ -13,6 +13,8 @@ export default async function handler(req, res) {
             provider: "fireworks-ai",
             model: "deepseek-ai/DeepSeek-R1-0528",
             messages: [{ role: "user", content: req.body.message }],
+            // stream: true,
+
         });
 
         res.status(200).json(chatCompletion.choices[0].message);

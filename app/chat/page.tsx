@@ -3,6 +3,13 @@ import { useState } from "react";
 import Navbar from "@/component/navbar";
 import Footer from "@/component/Footer";
 
+function stripThinkTags(text: string) {
+  return text
+    .replace(/<think>[\s\S]*?<\/think>/gi, '') // Remove <think>...</think>
+    .replace(/\*/g, '') // Remove all asterisks
+    .trim();
+}
+
 const ChatAI = () => {
   const [input, setInput] = useState("");
   const [response, setResponse] = useState("");
@@ -20,10 +27,10 @@ const ChatAI = () => {
 
     const data = await res.json();
 
-    if (Array.isArray(data)) {
-      setResponse(data.map(msg => msg.content).join("\n"));
+if (Array.isArray(data)) {
+      setResponse(stripThinkTags(data.map(msg => msg.content).join("\n")));
     } else if (typeof data === "object" && data.content) {
-      setResponse(data.content);
+      setResponse(stripThinkTags(data.content));
     } else {
       setResponse("Sorry, I couldn't understand that.");
     }
