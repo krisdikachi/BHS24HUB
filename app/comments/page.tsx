@@ -37,7 +37,7 @@ export default function CommentsPage() {
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold tracking-tight text-[#2ecc17]">User Comments</h1>
           <p className="text-gray-600 text-sm md:text-base">
-            Here's what users are saying about <span className="text-[#2ecc17] font-semibold">BHS24HUB</span>.
+            Here&apos;s what users are saying about <span className="text-[#2ecc17] font-semibold">BHS24HUB</span>.
           </p>
         </div>
 

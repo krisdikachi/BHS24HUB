@@ -2,7 +2,7 @@
 
 Welcome to our School Library platform. Our mission is to make academic resources easily accessible to students and educators. We believe that learning should be engaging, simple, and available to everyone.
 
-This platform provides a digital catalog of books, articles, and academic terms. Whether you're looking for definitions, textbook-style explanations, or AI-generated content to better understand a topic, we’ve got you covered.
+This platform provides a digital catalog of books, articles, and academic terms. Whether you&apos;re looking for definitions, textbook-style explanations, or AI-generated content to better understand a topic, we’ve got you covered.
 
 Built with ❤️ by the AndroTechlist Group, this application combines technology with education to support students in their academic journey.
 

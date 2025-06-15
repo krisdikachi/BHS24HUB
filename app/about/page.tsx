@@ -80,7 +80,7 @@ export default function AboutPage() {
                   <Heart className="h-12 w-12 text-[#2ecc17]" />
                   <h3 className="text-xl font-bold">Passion for Learning</h3>
                   <p className="text-sm text-black dark:text-black">
-                    We're united by our passion for education and belief in the power of reading.
+                    We&apos;re united by our passion for education and belief in the power of reading.
                   </p>
                 </CardContent>
               </Card>
@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <p className="text-black dark:text-black">
-              We'd love to hear from you! If you have any questions, suggestions, or feedback, please don't hesitate to
+              We&apos;d love to hear from you! If you have any questions, suggestions, or feedback, please don't hesitate to
               reach out to us at{" "}
               <a href="mailto:androtechlistgroup@gmail.com" className="text-[#2ecc17] underline">
                 androtechlistgroup@gmail.com
