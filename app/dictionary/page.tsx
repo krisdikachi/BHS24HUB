@@ -1,8 +1,13 @@
-// pages/define.js
 "use client";
+
 import Navbar from '@/component/navbar';
-import React, { useState } from 'react';
 import Footer from '@/component/Footer';
+import { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { BookOpen } from 'lucide-react';
 
 export default function DefinePage() {
   const [term, setTerm] = useState('');
@@ -10,8 +15,6 @@ export default function DefinePage() {
   const [schoolDefinition, setSchoolDefinition] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  // Removed aiExplanation state
-  // const [aiExplanation, setAiExplanation] = useState('');
 
   const fetchDefinitions = async () => {
     if (!term) return;
@@ -19,10 +22,8 @@ export default function DefinePage() {
     setError('');
     setTextbookExplanation('');
     setSchoolDefinition('');
-    // setAiExplanation(''); // Removed
 
     try {
-      // Wikipedia summary
       const wikiRes = await fetch(
         `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(term)}`
       );
@@ -37,7 +38,6 @@ export default function DefinePage() {
     }
 
     try {
-      // Dictionary API
       const dictRes = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(term)}`
       );
@@ -55,87 +55,91 @@ export default function DefinePage() {
       setSchoolDefinition('Error fetching dictionary data.');
     }
 
-    // Removed AI explanation fetch
-    /*
-    try {
-      const aiRes = await fetch('/api/ai-explanation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ term }),
-      });
-      if (aiRes.ok) {
-        const aiData = await aiRes.json();
-        setAiExplanation(aiData.explanation);
-      } else {
-        const errorData = await aiRes.json();
-        setAiExplanation(`Error: ${errorData.error || 'Failed to fetch AI explanation.'}`);
-      }
-    } catch (err) {
-      setAiExplanation('Error fetching AI explanation.');
-    }
-    */
-
     setLoading(false);
   };
 
   return (
-    <div>
-      <title>Textbook-like Explanation</title>
-      <meta name="description" content="Get textbook-like explanations and school-level definitions for terms." />
-      <link rel="icon" href="/favicon.ico" />
-
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className='PARENTDIV' style={{ maxWidth: '700px', margin: '2rem auto', fontFamily: 'Arial, sans-serif' }}>
-        <h1>Term Explanation</h1>
-        <input
-          type="text"
-          placeholder="Enter a term (e.g., Photosynthesis)"
-          value={term}
-          onChange={(e) => setTerm(e.target.value)}
-          style={{
-            width: '80%',
-            padding: '0.5rem',
-            fontSize: '1rem',
-            border: '1px solid #2ecc17',
-            borderRadius: '4px'
-          }}
-        />
-        <button
-          onClick={fetchDefinitions}
-          style={{
-            padding: '0.5rem 1rem',
-            marginLeft: '1rem',
-            fontSize: '1rem',
-            background: '#2ecc17',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
-        >
-          Search
-        </button>
 
-        {loading && <p>Loading...</p>}
-        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+      <main className="flex-1 container ml-auto mr-auto max-w-2xl py-12 space-y-8">
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl font-bold tracking-tight">Term Explanation</h1>
+          <p className="text-gray-500 dark:text-gray-400">
+            Get textbook-like and school-level definitions for academic terms.
+          </p>
+        </div>
 
-        {!loading && !error && (
-          <div>
-            <h2 className='book-header'>Textbook Explanation</h2>
-            <p style={{ textAlign: 'justify' }}>{textbookExplanation || 'No data available.'}</p>
+        <div className="flex items-center gap-2">
+          <Input
+            placeholder="Enter a term (e.g., Photosynthesis)"
+            value={term}
+            onChange={(e) => setTerm(e.target.value)}
+            className="flex-1"
+          />
+          <Button onClick={fetchDefinitions} className="bg-[#2ecc17] hover:bg-[#25a313]">
+            Search
+          </Button>
+        </div>
 
-            <h2 className='book-header'>School Definition</h2>
-            <p style={{ textAlign: 'justify' }}>{schoolDefinition || 'No data available.'}</p>
+        {loading ? (
+          <Card>
+            <CardHeader>
+              <Skeleton className="h-6 w-1/3" />
+              <Skeleton className="h-4 w-1/4" />
+            </CardHeader>
+            <CardContent>
+              <Skeleton className="h-4 w-full mb-2" />
+              <Skeleton className="h-4 w-11/12 mb-2" />
+              <Skeleton className="h-4 w-10/12" />
+            </CardContent>
+          </Card>
+        ) : error ? (
+          <p className="text-red-500">Error: {error}</p>
+        ) : (
+          <>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">Textbook Explanation</CardTitle>
+                <CardDescription className="text-gray-500 dark:text-gray-400">
+                  A concise academic-style overview
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-justify leading-relaxed">
+                  {textbookExplanation || 'No data available.'}
+                </p>
+              </CardContent>
+            </Card>
 
-            {/* Removed AI-Generated Explanation section */}
-            {/*
-            <h2 className='book-header'>AI-Generated Explanation</h2>
-            <p style={{ textAlign: 'justify' }}>{aiExplanation || 'No data available.'}</p>
-            */}
-          </div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">School Definition</CardTitle>
+                <CardDescription className="text-gray-500 dark:text-gray-400">
+                  A simple definition suitable for classroom use
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-justify leading-relaxed">
+                  {schoolDefinition || 'No data available.'}
+                </p>
+              </CardContent>
+            </Card>
+          </>
         )}
-      </div>
+      </main>
+
       <Footer />
+
+      {/* Floating action icon, if desired later */}
+      {/* <Button
+        onClick={() => alert('Quick dictionary access')}
+        className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-[#2ecc17] hover:bg-[#25a313] shadow-lg"
+        size="icon"
+      >
+        <BookOpen className="h-6 w-6" />
+        <span className="sr-only">Quick Lookup</span>
+      </Button> */}
     </div>
   );
 }

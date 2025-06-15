@@ -1,171 +1,152 @@
-// ...existing imports...
-"use client";
-import { Menu, X, ChevronDown } from "lucide-react";
-import React, { useState, useRef, useEffect } from "react";
-// ...existing code...
+"use client"
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
-  const megaRef = useRef<HTMLDivElement>(null);
+import { useEffect, useRef, useState } from "react"
+import { Menu, X, ChevronDown } from "lucide-react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+  const [megaOpen, setMegaOpen] = useState(false)
+  const pathname = usePathname()
+  const megaRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (megaRef.current && !megaRef.current.contains(event.target as Node)) {
-        setMegaOpen(false);
+        setMegaOpen(false)
       }
     }
+
     if (megaOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside)
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside)
     }
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [megaOpen]);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [megaOpen])
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Books", path: "/books" },
+    { name: "Dictionary", path: "/dictionary" },
+    { name: "Bhs24hub AI", path: "/chat" },
+  ]
+
+  const dropdownLinks = [
+    { name: "Reviews", path: "/comments" },
+    { name: "About", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
+  ]
 
   return (
-    <header className="bg-[#2ecc71] text-white w-[80%] mx-auto my-auto rounded-2xl NavBarParent sticky top-0 z-50 navbar-animate">
-      <div className="mx-auto px-4 md:px-6 py-4 flex justify-between items-center w-full">
-        <div className="text-2xl text-red-600 font-extrabold tracking-wider drop-shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur-2xl shadow-sm">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className="text-2xl font-extrabold text-[#2ecc71] tracking-widest">
           BHS24HUB
-        </div>
-
-        {/* Toggle menu for mobile */}
-        <div className="md:hidden">
-          <button onClick={() => setOpen(!open)} className="focus:outline-none">
-            {open ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-4 lg:gap-8 font-semibold text-sm items-center w-full justify-end">
-          <a href="/" className="hover:text-emerald-100 transition duration-200">
-            Home
-          </a>
-          <a href="/books" className="hover:text-emerald-100 transition duration-200">
-            Books
-          </a>
-          <a href="/dictionary" className="hover:text-emerald-100 transition duration-200">
-            Dictionary
-          </a>
-          {/* About (regular link) */}
-          <a href="/chat" className="hover:text-emerald-100 transition duration-200">
-            Bhs24hub AI
-          </a>
-          {/* More with MegaDropdown */}
-          <div className="relative flex items-center">
-            <button
-              type="button"
-              className="hover:text-emerald-100 transition duration-200 flex items-center gap-1 focus:outline-none"
-              onClick={() => setMegaOpen((prev) => !prev)}
-              aria-expanded={megaOpen}
-              aria-controls="mega-dropdown"
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+              className={`hover:text-[#2ecc71] transition ${
+                pathname === link.path ? "text-[#2ecc71]" : ""
+              }`}
             >
-              <span className="flex items-center gap-1">
-                More
-                <ChevronDown size={18} className="ml-1" />
-                <span className="ml-1 text-red-500 animate-bounce" title="More inside">✨</span>
-              </span>
+              {link.name}
+            </Link>
+          ))}
+
+          {/* More Dropdown */}
+          <div className="relative" ref={megaRef}>
+            <button
+              onClick={() => setMegaOpen((prev) => !prev)}
+              className="flex items-center gap-1 hover:text-[#2ecc71] transition"
+            >
+              More <ChevronDown size={16} />
+              <span className="ml-1 text-yellow-400 animate-bounce" title="More inside">✨</span>
             </button>
-            {/* Mega Dropdown */}
-           {megaOpen && (
-  <div
-    ref={megaRef}
-    id="mega-dropdown"
-    className="absolute ml-[-202px]  top-full  mt-3 w-[400px] bg-white text-gray-800 rounded-xl shadow-2xl border border-emerald-200 z-50  sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 animate-fade-in"
-    // style={{ maxWidth: "100vw" }}
-  >
-    <div>
-      <h4 className="font-bold text-emerald-700 mb-2">More Utility</h4>
-      <ul className="space-y-2">
-        {/* <li><a href="/about/team" className="hover:text-emerald-600">Our Team</a></li> */}
-        <li><a href="/comments" className="hover:text-emerald-600">Reviews</a></li>
-        <li><a href="/about" className="hover:text-emerald-600">About</a></li>
-        <li><a href="/contact" className="hover:text-emerald-600">Contact Us</a></li>
-      </ul>
-    </div>
-    {/* <div>
-      <h4 className="font-bold text-emerald-700 mb-2">Resources</h4>
-      <ul className="space-y-2">
-        <li><a href="/about/careers" className="hover:text-emerald-600">Careers</a></li>
-        <li><a href="/about/events" className="hover:text-emerald-600">Events</a></li>
-        <li><a href="/about/partners" className="hover:text-emerald-600">Partners</a></li>
-        <li><a href="/about/news" className="hover:text-emerald-600">News</a></li>
-      </ul>
-    </div> */}
-  </div>
-)}
+
+            {megaOpen && (
+              <div className="absolute top-full right-0 mt-3 w-[350px] bg-white border border-emerald-200 rounded-xl shadow-xl p-6 grid grid-cols-2 gap-4 z-50">
+                <div>
+                  <h4 className="font-semibold text-emerald-700 mb-2">More Utility</h4>
+                  <ul className="space-y-2 text-sm">
+                    {dropdownLinks.map((item) => (
+                      <li key={item.path}>
+                        <Link href={item.path} className="hover:text-emerald-600 block">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </nav>
+
+        {/* Mobile Menu Button */}
+        <button onClick={() => setOpen(true)} className="md:hidden">
+          <Menu size={24} />
+        </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Slide-in Menu */}
       {open && (
         <div className="fixed inset-0 z-50 flex md:hidden">
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-40"
+            className="fixed inset-0 bg-black bg-opacity-40 z-40"
             onClick={() => setOpen(false)}
           />
-          {/* Side Canvas */}
-          <div className="relative bg-[#2ecc71] w-64 h-full shadow-lg animate-slide-in-right p-6">
+
+          {/* Slide Panel */}
+<div className="relative bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 w-72 h-[100vh] shadow-lg z-50 animate-slide-in-right p-6 text-white">
             <button
-              className="absolute top-4 right-4 text-white"
+              className="absolute top-4 right-4"
               onClick={() => setOpen(false)}
             >
               <X size={28} />
             </button>
-            <nav className="flex flex-col gap-6 font-semibold text-lg mt-12">
-              <a href="/" onClick={() => setOpen(false)} className="hover:text-emerald-100">Home</a>
-              <a href="/books" onClick={() => setOpen(false)} className="hover:text-emerald-100">Books</a>
-              <a href="/chat" onClick={() => setOpen(false)} className="hover:text-emerald-100">Bhs24hub AI</a>
-              <a href="/dictionary" onClick={() => setOpen(false)} className="hover:text-emerald-100">Dictionary</a>
-              {/* More (mobile) */}
-              <button
-                type="button"
-                className="hover:text-emerald-100 transition duration-200 flex items-center gap-1 focus:outline-none mt-2"
-                onClick={() => setMegaOpen((prev) => !prev)}
-                aria-expanded={megaOpen}
-                aria-controls="mega-dropdown-mobile"
-              >
-                <span className="flex items-center gap-1">
-                  More
-                  <ChevronDown size={18} className="ml-1" />
-                  <span className="ml-1 text-yellow-300 animate-bounce" title="More inside">✨</span>
-                </span>
-              </button>
-              {megaOpen && (
-                <div
-                  ref={megaRef}
-                  id="mega-dropdown-mobile"
-                  className="w-full bg-white text-gray-800 rounded-xl shadow-2xl border border-emerald-200 z-50 p-4 grid grid-cols-1 gap-4 animate-fade-in"
+
+            <nav className="flex flex-col gap-6 text-lg font-semibold mt-16  w-[100%] shadow-lg z-50 animate-slide-in-right text-white h-[calc(100vh-4rem)] overflow-y-auto">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className="hover:text-emerald-100"
+                  onClick={() => setOpen(false)}
                 >
-                  <div>
-                    <h4 className="font-bold text-emerald-700 mb-2">Quick Links</h4>
-                    <ul className="space-y-2">
-                      <li><a href="/comments" className="hover:text-emerald-600">Reviews</a></li>
-                      <li><a href="/about" className="hover:text-emerald-600">About</a></li>
-                      
-                      <li><a href="/contact" className="hover:text-emerald-600">Contact Us</a></li>
-                    </ul>
-                  </div>
-                  {/* <div>
-                    <h4 className="font-bold text-emerald-700 mb-2">Resources</h4>
-                    <ul className="space-y-2">
-                      <li><a href="/about/careers" className="hover:text-emerald-600">Careers</a></li>
-                      <li><a href="/about/events" className="hover:text-emerald-600">Events</a></li>
-                      <li><a href="/about/partners" className="hover:text-emerald-600">Partners</a></li>
-                      <li><a href="/about/news" className="hover:text-emerald-600">News</a></li>
-                    </ul>
-                  </div> */}
-                </div>
-              )}
+                  {link.name}
+                </Link>
+              ))}
+
+              <div className="mt-6 border-t border-white/30 pt-4">
+                <h4 className="text-sm font-bold mb-2 text-white/80">More</h4>
+                <ul className="space-y-2 text-white">
+                  {dropdownLinks.map((item) => (
+                    <li key={item.path}>
+                      <Link
+                        href={item.path}
+                        className="hover:text-emerald-100"
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </nav>
           </div>
         </div>
       )}
     </header>
-  );
-};
-
-export default Navbar;
+  )
+}

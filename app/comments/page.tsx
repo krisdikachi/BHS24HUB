@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/component/navbar";
 import Feedback from "@/component/Feedback";
 import Footer from "@/component/Footer";
+import { Card, CardHeader, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 
 interface Comment {
   comment: string;
@@ -12,41 +13,55 @@ interface Comment {
 export default function CommentsPage() {
   const [comments, setComments] = useState<Comment[]>([]);
 
- useEffect(() => {
-  fetch("/api/feedback")
-    .then(res => res.json())
-    .then(data => {
-      if (Array.isArray(data)) {
-        setComments(data.slice(0, 2));
-      } else {
-        setComments([]); // fallback to empty array if error or not array
-        console.error("API did not return an array:", data);
-      }
-    })
-    .catch(err => {
-      setComments([]);
-      console.error("Failed to fetch comments:", err);
-    });
-}, []);
+  useEffect(() => {
+    fetch("/api/feedback")
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setComments(data.slice(0, 2)); // limit to 2 comments
+        } else {
+          setComments([]);
+          console.error("API did not return an array:", data);
+        }
+      })
+      .catch(err => {
+        setComments([]);
+        console.error("Failed to fetch comments:", err);
+      });
+  }, []);
 
   return (
     <>
       <Navbar />
-      <section className="max-w-2xl mx-auto py-10 px-4">
-        <h1 className="text-3xl font-bold mb-6 text-emerald-700">All Comments</h1>
-        <ul className="space-y-4">
-  {Array.isArray(comments) && comments.length > 0 ? (
-    comments.map((c, i) => (
-      <li key={i} className="rounded p-3 text-gray-800 bg-emerald-50 shadow">
-        <span className="block">{c.comment}</span>
-        <span className="block text-xs text-gray-500 mt-1">{new Date(c.date).toLocaleString()}</span>
-      </li>
-    ))
-  ) : (
-    <li className="text-gray-500">No comments yet.</li>
-  )}
-</ul>
+      <section className="max-w-4xl mx-auto py-12 px-4 space-y-8">
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl font-bold tracking-tight text-[#2ecc17]">User Comments</h1>
+          <p className="text-gray-600 text-sm md:text-base">
+            Here's what users are saying about <span className="text-[#2ecc17] font-semibold">BHS24HUB</span>.
+          </p>
+        </div>
+
+        {comments.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {comments.map((c, i) => (
+              <Card key={i}>
+                <CardHeader>
+                  <CardTitle className="text-base text-[#2ecc17]">Comment #{i + 1}</CardTitle>
+                  <CardDescription className="text-xs text-gray-500">
+                    {new Date(c.date).toLocaleString()}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-700">{c.comment}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center text-gray-500 mt-6">No comments yet.</div>
+        )}
       </section>
+
       <Feedback />
       <Footer />
     </>

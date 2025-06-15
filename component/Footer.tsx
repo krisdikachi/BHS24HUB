@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer: React.FC = () => (
-  <footer className="relative bg-[#2ecc71] text-white py-5 px-3 mt-20 text-center rounded-t-2xl shadow-2xl overflow-hidden">
+  <footer className="relative bg-[#2ecc71] text-white py-5 px-3 mt-20 text-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 shadow-2xl overflow-hidden">
     {/* 3D polygon effect background */}
     <div className="absolute inset-0 pointer-events-none z-0">
       <svg width="100%" height="100%" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">

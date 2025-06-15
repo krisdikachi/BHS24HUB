@@ -1,110 +1,122 @@
 "use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { BookOpen, Search } from "lucide-react";
 import Navbar from "@/component/navbar";
 import Footer from "@/component/Footer";
-import React, { useEffect, useState, useRef } from "react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
-const Books = () => {
-  interface PdfFile {
-    name: string;
-    path: string;
-  }
+interface PdfFile {
+  name: string;
+  path: string;
+}
 
+const genres = ["All", "Science", "Literature", "Technology", "History"];
+
+export default function BooksPage() {
   const [pdfFiles, setPdfFiles] = useState<PdfFile[]>([]);
-  const [selectedBook, setSelectedBook] = useState<string>("");
-  const bookRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [filteredBooks, setFilteredBooks] = useState<PdfFile[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("All");
 
   useEffect(() => {
     const fetchPdfs = async () => {
       const response = await fetch("/api/get-pdfs");
       const data = await response.json();
       setPdfFiles(data);
+      setFilteredBooks(data);
     };
     fetchPdfs();
   }, []);
 
-  // Scroll to book section when selected from dropdown or sidebar
   useEffect(() => {
-    if (selectedBook && bookRefs.current) {
-      const idx = pdfFiles.findIndex(pdf => pdf.name === selectedBook);
-      if (idx !== -1 && bookRefs.current[idx]) {
-        bookRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+    let books = pdfFiles;
+
+    if (selectedGenre !== "All") {
+      books = books.filter((book) => book.name.toLowerCase().includes(selectedGenre.toLowerCase()));
     }
-  }, [selectedBook, pdfFiles]);
+
+    if (searchTerm) {
+      books = books.filter((book) => book.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+
+    setFilteredBooks(books);
+  }, [searchTerm, selectedGenre, pdfFiles]);
 
   return (
     <>
       <Navbar />
-      <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto">
-        {/* Sidebar for desktop */}
-      {/* // ...existing code... */}
-<aside className="hidden md:block md:w-1/4 bg-emerald-50 p-6 rounded-l-2xl shadow-lg sticky top-24 h-[70vh] self-start overflow-y-auto">
-  <h3 className="text-lg font-bold text-emerald-700 mb-4">Book List</h3>
-  <ul className="space-y-2">
-    {pdfFiles.map((pdf, idx) => (
-      <li key={idx}>
-        <button
-          className="w-full text-left px-3 py-2 rounded hover:bg-emerald-100 transition text-emerald-700 font-semibold"
-          onClick={() => setSelectedBook(pdf.name)}
-        >
-          {pdf.name}
-        </button>
-      </li>
-    ))}
-  </ul>
-</aside>
-{/* // ...existing code... */}
-        {/* Dropdown for mobile */}
-        <div className="block md:hidden w-full px-4 mt-4">
-          <select
-            className="w-full rounded p-2 border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-400"
-            value={selectedBook}
-            onChange={e => setSelectedBook(e.target.value)}
-          >
-            <option value="">Select a book...</option>
-            {pdfFiles.map((pdf, idx) => (
-              <option key={idx} value={pdf.name}>{pdf.name}</option>
-            ))}
-          </select>
+      <div className="container py-12">
+        <div className="space-y-4 text-center mb-8">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Book Library</h1>
+          <p className="text-gray-500 md:text-xl dark:text-gray-400 max-w-2xl mx-auto">
+            Explore our PDF library curated for your educational success.
+          </p>
         </div>
-        {/* Books List */}
-        <div className="books-section flex-1 px-2 md:px-8 py-8">
-          <h2 className="book-header mb-6">Some of Our Books:</h2>
-          <div className="books-list space-y-10">
-            {pdfFiles.map((pdf, index) => (
-              <div
-                className="book-item mb-8"
-                key={index}
-                ref={el => { bookRefs.current[index] = el; }}
-                id={pdf.name.replace(/\s+/g, "-").toLowerCase()}
+
+        {/* Search and Genre Filter */}
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
+          <div className="relative flex-1">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
+            <Input
+              type="search"
+              placeholder="Search books..."
+              className="pl-8"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {genres.map((genre) => (
+              <Button
+                key={genre}
+                variant={genre === selectedGenre ? "default" : "outline"}
+                className={genre === selectedGenre ? "bg-[#2ecc17] hover:bg-[#25a313]" : ""}
+                size="sm"
+                onClick={() => setSelectedGenre(genre)}
               >
-                <h3 className="book-header text-xl font-bold text-emerald-700 mb-2">{pdf.name}</h3>
-                <button className="download-button mb-2">
-                  <a
-                    href={pdf.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download
-                    className="text-white bg-emerald-600 px-4 py-2 rounded hover:bg-emerald-700 transition"
-                  >
-                    Download⬇️
-                  </a>
-                </button>
-                <iframe
-                  src={pdf.path}
-                  width="100%"
-                  height="400px"
-                  title={`Book ${index + 1}`}
-                  className="book-iframe rounded shadow"
-                ></iframe>
-              </div>
+                {genre}
+              </Button>
             ))}
           </div>
+        </div>
+
+        {/* Books Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredBooks.map((book, idx) => (
+            <Card key={idx} className="overflow-hidden flex flex-col h-full">
+              <div className="aspect-[2/3] bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                PDF
+              </div>
+              <CardHeader className="p-4">
+                <CardTitle className="line-clamp-2">{book.name.replace(/\.[^/.]+$/, "")}</CardTitle>
+                <p className="text-sm text-gray-500 dark:text-gray-400">PDF Book</p>
+              </CardHeader>
+              <CardContent className="p-4 pt-0 flex-1">
+                <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  A detailed educational PDF file. Click below to view or download.
+                </p>
+              </CardContent>
+              <CardFooter className="p-4 pt-0 flex gap-2">
+                <Button asChild className="flex-1 bg-[#2ecc17] hover:bg-[#25a313]">
+                  <Link href={book.path} target="_blank">
+                    <BookOpen className="mr-2 h-4 w-4" /> Read
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="flex-1">
+                  <a href={book.path} download>
+                    Download
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </div>
       <Footer />
     </>
   );
-};
-
-export default Books;
+}
