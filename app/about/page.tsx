@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <p className="text-black dark:text-black">
-              We&apos;d love to hear from you! If you have any questions, suggestions, or feedback, please don't hesitate to
+              We&apos;d love to hear from you! If you have any questions, suggestions, or feedback, please don&apos;t hesitate to
               reach out to us at{" "}
               <a href="mailto:androtechlistgroup@gmail.com" className="text-[#2ecc17] underline">
                 androtechlistgroup@gmail.com

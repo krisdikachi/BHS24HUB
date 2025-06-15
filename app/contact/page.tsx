@@ -85,7 +85,7 @@ export default function ContactPage() {
             <section className="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col gap-8">
                 <h1 className="text-3xl md:text-4xl font-bold text-emerald-700 mb-2">Contact Us</h1>
                 <p className="text-gray-600 mb-6">
-                    Reach out to us for any queries, suggestions, or support. We’re here to help!
+                    Reach out to us for any queries, suggestions, or support. We&apos;re here to help!
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col gap-6">
