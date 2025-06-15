@@ -1,7 +1,7 @@
 "use client";
 import HeroSection from "@/component/HeroSection";
 import Navbar from "@/component/navbar";
-import NovelPreview from "@/component/NovelPreview";
+
 import Feedback from "@/component/Feedback";
 import Footer from "@/component/Footer";
 import HeroSectionsecond from "@/component/Herosectionsecond";
