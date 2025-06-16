@@ -6,8 +6,8 @@ import Footer from "@/component/Footer";
 function stripThinkTags(text: string) {
   return text
     .replace(/<think>[\s\S]*?<\/think>/gi, '')
-    .replace(/\*/g, '')
-    .trim();
+    .replace(/\*/g, '');
+    
 }
 
 interface Message {
