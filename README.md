@@ -1,7 +1,7 @@
 # ✨ Welcome to the BHS24HUB Feedback Platform! ✨
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3V2Z2x0aG5zZ2ZtdmN5b2N0eXNocjVqZzV2c2J0c3p6a3JqZ3h1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abG28u2bK5tQn6M/giphy.gif" alt="Animated welcome sign with confetti" width="400"/>
+  <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M2R0Zno5MXg3dmN5eWw1eGFqNG9nNjZ6aGM2djBoaTExdDdkdmVwbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EqrIrilix4ysLpavlm/giphy.gif" alt="Animated welcome sign with confetti" width="400"/>
 </p>
 
 
@@ -15,13 +15,12 @@
 
 Here's a sneak peek at the application in action.
 
-| The Feedback Wall                                    | Submitting a Comment                                |
-| :--------------------------------------------------- | :-------------------------------------------------- |
-| ![The Home Page.](/bhs24hub/public/screenshot.png) |
- ![The Books Page.](/bhs24hub/public/screenshot2.png) |  
-![The Dictionary Page.](/bhs24hub/public/screenshot3.png)
-![The AI Chat Page.](/bhs24hub/public/screenshot4.png)
-![The Feedback Page.](/bhs24hub/public/screenshot5.png)
+
+| ![The Home Page.](/public/screenshot.png) |
+ ![The Books Page.](/public/screenshot2.png) |  
+![The Dictionary Page.](/public/screenshot3.png)
+![The AI Chat Page.](/public/screenshot4.png)
+![The Feedback Page.](/public/screenshot5.png)
 
 
 ---
@@ -31,7 +30,7 @@ Here's a sneak peek at the application in action.
 Ready to jump in? It's as easy as 1-2-3!
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW1wY2ZzZ2Z0a3h1a2ZqZ3J0eW52a2ZqZ3J0eW52a2ZqZ3J0eW52a2ZqZ3J0ZQ/l1J9A6pPz6vT9tQ08/giphy.gif" alt="Animated GIF of someone typing on a laptop" width="400"/>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDQ0eDR3cGZpOWZscWUwOWlpa250OXl2Y3RwYWc1YWFkOXp1YnU1MCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qrxf5PQDCF0HfyGaPV/giphy.gif" alt="Animated GIF of someone typing on a laptop" width="400"/>
 </p>
 
 1.  **Find the comment box** on the main page.
@@ -40,9 +39,9 @@ Ready to jump in? It's as easy as 1-2-3!
 
 
 
-#### Link To The Project
 
-`https://bhs24hub.vercel.app`
+
+#### `https://bhs24hub.vercel.app`
 
 
 
@@ -73,3 +72,7 @@ BHS24HUB is packed with tools to make your reading and learning experience inter
 ### 🎉 Thank You for Contributing!
 
 Your feedback is what makes BHS24HUB better. We can't wait to see what you have to share!
+
+<p align="center">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWF0eXluOWY3NnlqMWRyODQ3c3d2d3c4dmY2ZjBuanBlMzIza2E3OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2AIaQx5I560Y2VKQTM/giphy.gif" width="400" />
+</p>
