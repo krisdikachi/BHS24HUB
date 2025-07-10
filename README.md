@@ -41,14 +41,14 @@ Ready to jump in? It's as easy as 1-2-3!
 
 
 
-#### `https://bhs24hub.vercel.app`
+### `https://bhs24hub.vercel.app`
 
 
 
 
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2R0a2R0a2R0a2R0a2R0a2R0a2R0a2R0a2R0a2R0ZQ/3o7TKsWwF2B3f2aIhy/giphy.gif" alt="Animated GIF of a wall of scrolling text and images" width="400"/>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmRzNGcwbGpzZno1emFkcDM5MGZoODRndXZ1MnkxeXcxajdhMHlvMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/E1UU9Bercy12KoZMij/giphy.gif" alt="Animated GIF of a wall of scrolling text and images" width="400"/>
 </p>
 
 ## 🌟 What You Can Do on BHS24HUB
