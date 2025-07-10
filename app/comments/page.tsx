@@ -18,7 +18,7 @@ export default function CommentsPage() {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
-          setComments(data.slice(0, 2)); // limit to 2 comments
+          setComments(data);
         } else {
           setComments([]);
           console.error("API did not return an array:", data);
@@ -46,7 +46,7 @@ export default function CommentsPage() {
             {comments.map((c, i) => (
               <Card key={i}>
                 <CardHeader>
-                  <CardTitle className="text-base text-[#2ecc17]">Comment #{i + 1}</CardTitle>
+                  <CardTitle className="text-base text-[#2ecc17]">Comment No{i + 1}</CardTitle>
                   <CardDescription className="text-xs text-gray-500">
                     {new Date(c.date).toLocaleString()}
                   </CardDescription>
