@@ -41,7 +41,7 @@ Ready to jump in? It's as easy as 1-2-3!
 
 
 
-### `https://bhs24hub.vercel.app`
+### https://bhs24hub.vercel.app
 
 
 
