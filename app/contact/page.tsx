@@ -1,4 +1,3 @@
-
 'use client';
 import Navbar from '@/component/navbar';
 import Footer from '@/component/Footer';
@@ -81,9 +80,9 @@ export default function ContactPage() {
         <>
             <Navbar />
           
-        <main className="min-h-screen bg-gradient-to-br from-emerald-50 to-emerald-100 flex flex-col items-center py-10 px-4">
+        <main className="min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 flex flex-col items-center py-10 px-4">
             <section className="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col gap-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-emerald-700 mb-2">Contact Us</h1>
+                <h1 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">Contact Us</h1>
                 <p className="text-gray-600 mb-6">
                     Reach out to us for any queries, suggestions, or support. We&apos;re here to help!
                 </p>
@@ -97,7 +96,7 @@ export default function ContactPage() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-indigo-50 transition"
                             >
-                                <span className="text-emerald-700">{info.icon}</span>
+                                <span className="text-sky-700">{info.icon}</span>
                                 <div>
                                     <div className="text-sm text-gray-500">{info.label}</div>
                                     <div className="text-lg font-medium text-gray-800">{info.value}</div>
@@ -114,7 +113,7 @@ export default function ContactPage() {
                                     className="p-2 rounded-full bg-indigo-50 hover:bg-indigo-100 transition"
                                     aria-label={social.label}
                                 >
-                                    <span className="w-6 h-6 text-emerald-700">{social.icon}</span>
+                                    <span className="w-6 h-6 text-sky-700">{social.icon}</span>
                                 </a>
                             ))}
                         </div>

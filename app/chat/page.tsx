@@ -53,9 +53,9 @@ const ChatAI = () => {
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-gradient-to-br from-emerald-50 to-emerald-100 flex flex-col items-center py-10 px-2">
+      <section className="min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 flex flex-col items-center py-10 px-2">
         <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-6">
-          <h1 className="text-2xl font-bold text-emerald-700 text-center mb-2">
+          <h1 className="text-2xl font-bold text-sky-700 text-center mb-2">
             Chat with BHS24HUB AI
           </h1>
 
@@ -69,7 +69,7 @@ const ChatAI = () => {
                 <div
                   className={`max-w-xs px-4 py-2 rounded-xl shadow ${
                     msg.sender === "user"
-                      ? "bg-emerald-600 text-white rounded-br-none"
+                      ? "bg-sky-600 text-white rounded-br-none"
                       : "bg-gray-200 text-gray-900 rounded-bl-none"
                   }`}
                 >
@@ -97,11 +97,11 @@ const ChatAI = () => {
                 if (e.key === "Enter") handleChat();
               }}
               disabled={loading}
-              className="flex-1 rounded-lg border border-emerald-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-800"
+              className="flex-1 rounded-lg border border-sky-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400 text-gray-800"
             />
             <button
               onClick={handleChat}
-              className="bg-emerald-600 text-white font-bold px-6 py-2 rounded-lg hover:bg-emerald-700 transition disabled:opacity-60"
+              className="bg-sky-600 text-white font-bold px-6 py-2 rounded-lg hover:bg-sky-700 transition disabled:opacity-60"
               disabled={loading}
             >
               Send

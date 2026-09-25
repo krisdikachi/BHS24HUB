@@ -1,13 +1,19 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-@tailwind base;
-@tailwind components;
+
 @tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --foreground: #2ecc71;
+  --foreground: #0EA5E9;
   --bhscol:#2ECC17;
+  --brand: #0EA5E9;
+  --brand-dark: #0369A1;
+  --brand-light: #E0F2FE;
+  --ink: #1E3A4C;
+  --amber: #E9B44C;
+  --paper: #FBF7EE;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,6 +23,10 @@
   }
 }
 
+.font-display {
+  font-family: 'Literata Variable', Georgia, serif;
+}
+
 
 /* styles/globals.css */
 .font-cursive {
@@ -24,8 +34,14 @@
 }
 
 body {
- background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FBF7EE;
+  color: #1E3A4C;
+  font-family: 'Geist Variable', Arial, Helvetica, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.dark body {
+  background-color: #0B1622;
+  color: #E5EDF3;
 }
 
 /* Styles for Hero Section */
@@ -69,7 +85,7 @@ background-color: #50c87886;
 }
 
 .get-started-button {
-  background-color: #2ecc71; /* Example color, adjust as needed */
+  background-color: #0EA5E9; /* Example color, adjust as needed */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -79,7 +95,7 @@ background-color: #50c87886;
   margin-top: 20px;
 }
 .book-header{
-  background-color: #2ecc71;
+  background-color: #0EA5E9;
   color: red;
   padding: 10px 20px;
   border: none;
@@ -110,7 +126,7 @@ background-color: #50c87886;
   transition: transform 0.3s ease;
 }
 .download-button {
-  background-color: #2ecc71; /* Example color, adjust as needed */
+  background-color: #0EA5E9; /* Example color, adjust as needed */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -142,15 +158,15 @@ background-color: #50c87886;
 
 .novel-3d {
   background: linear-gradient(135deg, #e0ffe7 60%, #b2f5ea 100%);
-  box-shadow: 0 8px 24px rgba(44, 204, 113, 0.15), 0 1.5px 0 #2ecc71 inset;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15), 0 1.5px 0 #0EA5E9 inset;
   border-radius: 1.2rem;
   transform: perspective(600px) rotateY(-8deg) rotateX(4deg);
   transition: transform 0.2s, box-shadow 0.2s;
-  border: 2px solid #2ecc71;
+  border: 2px solid #0EA5E9;
 }
 .novel-3d:hover {
   transform: perspective(600px) rotateY(0deg) rotateX(0deg) scale(1.04);
-  box-shadow: 0 16px 32px rgba(44, 204, 113, 0.25), 0 2px 0 #2ecc71 inset;
+  box-shadow: 0 16px 32px rgba(14, 165, 233, 0.25), 0 2px 0 #0EA5E9 inset;
 }
 
 

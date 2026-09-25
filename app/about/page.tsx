@@ -14,7 +14,7 @@ export default function AboutPage() {
           {/* Page Title */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-              About <span className="text-[#2ecc17]">BHS24HUB</span>
+              About <span className="text-[#0EA5E9]">BHS24HUB</span>
             </h1>
             <p className="text-gray-500 dark:text-gray-400 md:text-xl">
               Learn more about our educational reading platform and our mission
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <Card>
                 <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <BookOpen className="h-12 w-12 text-[#2ecc17]" />
+                  <BookOpen className="h-12 w-12 text-[#0EA5E9]" />
                   <h3 className="text-xl font-bold">Accessible Reading</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Making books and educational content accessible to all students regardless of location.
@@ -48,7 +48,7 @@ export default function AboutPage() {
               </Card>
               <Card>
                 <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <Lightbulb className="h-12 w-12 text-[#2ecc17]" />
+                  <Lightbulb className="h-12 w-12 text-[#0EA5E9]" />
                   <h3 className="text-xl font-bold">Enhanced Understanding</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Providing tools like AI summaries and dictionaries to improve comprehension.
@@ -68,7 +68,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <Card>
                 <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <Users className="h-12 w-12 text-[#2ecc17]" />
+                  <Users className="h-12 w-12 text-[#0EA5E9]" />
                   <h3 className="text-xl font-bold">Educators & Technologists</h3>
                   <p className="text-sm text-black dark:text-black">
                     Our team consists of experienced educators and skilled technologists working together.
@@ -77,7 +77,7 @@ export default function AboutPage() {
               </Card>
               <Card>
                 <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <Heart className="h-12 w-12 text-[#2ecc17]" />
+                  <Heart className="h-12 w-12 text-[#0EA5E9]" />
                   <h3 className="text-xl font-bold">Passion for Learning</h3>
                   <p className="text-sm text-black dark:text-black">
                     We&apos;re united by our passion for education and belief in the power of reading.
@@ -105,10 +105,10 @@ export default function AboutPage() {
             <p className="text-black dark:text-black">
               We&apos;d love to hear from you! If you have any questions, suggestions, or feedback, please don&apos;t hesitate to
               reach out to us at{" "}
-              <a href="mailto:androtechlistgroup@gmail.com" className="text-[#2ecc17] underline">
+              <a href="mailto:androtechlistgroup@gmail.com" className="text-[#0EA5E9] underline">
                 androtechlistgroup@gmail.com
               </a> or on WhatsApp at{" "}
-              <a href="https://wa.me/8101451936" className="text-[#2ecc17] underline">
+              <a href="https://wa.me/8101451936" className="text-[#0EA5E9] underline">
                 WhatsApp
               </a>.
             </p>

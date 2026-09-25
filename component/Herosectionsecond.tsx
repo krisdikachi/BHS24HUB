@@ -16,7 +16,7 @@ const Herosectionsecond: React.FC = () => {
           Instantly get concise, insightful summaries of your favorite novels using advanced AI. 
           Save time, discover key points, and never miss out on great stories!
         </p>
-        <Link href="/chat">
+        <Link href="/summarizer">
           <Button
             className="bg-[#2ecc71] hover:bg-[#25a313] text-white px-6 sm:px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition duration-200"
           >

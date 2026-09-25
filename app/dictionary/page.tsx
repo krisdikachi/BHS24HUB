@@ -77,7 +77,7 @@ export default function DefinePage() {
             onChange={(e) => setTerm(e.target.value)}
             className="flex-1"
           />
-          <Button onClick={fetchDefinitions} className="bg-[#2ecc17] hover:bg-[#25a313]">
+          <Button onClick={fetchDefinitions} className="bg-[#0EA5E9] hover:bg-[#0369A1]">
             Search
           </Button>
         </div>
@@ -134,7 +134,7 @@ export default function DefinePage() {
       {/* Floating action icon, if desired later */}
       {/* <Button
         onClick={() => alert('Quick dictionary access')}
-        className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-[#2ecc17] hover:bg-[#25a313] shadow-lg"
+        className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-[#0EA5E9] hover:bg-[#0369A1] shadow-lg"
         size="icon"
       >
         <BookOpen className="h-6 w-6" />

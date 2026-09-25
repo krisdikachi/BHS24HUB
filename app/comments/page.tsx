@@ -32,12 +32,12 @@ export default function CommentsPage() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <section className="max-w-4xl mx-auto py-12 px-4 space-y-8">
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight text-[#2ecc17]">User Comments</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-[#0EA5E9]">User Comments</h1>
           <p className="text-gray-600 text-sm md:text-base">
-            Here&apos;s what users are saying about <span className="text-[#2ecc17] font-semibold">BHS24HUB</span>.
+            Here&apos;s what users are saying about <span className="text-[#0EA5E9] font-semibold">BHS24HUB</span>.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function CommentsPage() {
             {comments.map((c, i) => (
               <Card key={i}>
                 <CardHeader>
-                  <CardTitle className="text-base text-[#2ecc17]">Comment No{i + 1}</CardTitle>
+                  <CardTitle className="text-base text-[#0EA5E9]">Comment No{i + 1}</CardTitle>
                   <CardDescription className="text-xs text-gray-500">
                     {new Date(c.date).toLocaleString()}
                   </CardDescription>

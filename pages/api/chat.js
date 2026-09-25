@@ -1,6 +1,6 @@
 // pages/api/chat.ts (or .js if you’re not using TypeScript)
 
-import { InferenceClient } from "@huggingface/inference";
+// import { InferenceClient } from "@huggingface/inference";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {

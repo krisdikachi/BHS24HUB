@@ -74,7 +74,7 @@ export default function BooksPage() {
               <Button
                 key={genre}
                 variant={genre === selectedGenre ? "default" : "outline"}
-                className={genre === selectedGenre ? "bg-[#2ecc17] hover:bg-[#25a313]" : ""}
+                className={genre === selectedGenre ? "bg-[#0EA5E9] hover:bg-[#0369A1]" : ""}
                 size="sm"
                 onClick={() => setSelectedGenre(genre)}
               >
@@ -88,7 +88,7 @@ export default function BooksPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredBooks.map((book, idx) => (
             <Card key={idx} className="overflow-hidden flex flex-col h-full">
-              <div className="aspect-[2/3] bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+              <div className="aspect-[2/3] bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-xl">
                 PDF
               </div>
               <CardHeader className="p-4">
@@ -101,7 +101,7 @@ export default function BooksPage() {
                 </p>
               </CardContent>
               <CardFooter className="p-4 pt-0 flex gap-2">
-                <Button asChild className="flex-1 bg-[#2ecc17] hover:bg-[#25a313]">
+                <Button asChild className="flex-1 bg-[#0EA5E9] hover:bg-[#0369A1]">
                   <Link href={book.path} target="_blank">
                     <BookOpen className="mr-2 h-4 w-4" /> Read
                   </Link>

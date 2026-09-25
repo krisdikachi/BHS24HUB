@@ -34,7 +34,7 @@ const HeroSection = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             {/* Left: Text */}
             <div className="flex-1 space-y-4 text-center lg:text-left">
-              <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
+              <h1 className="text-3xl font-bold tracking-tighter text-[#2ecc17] sm:text-5xl xl:text-6xl/none">
                 Discover the Joy of Reading with <span className="text-[#2ecc17]">BHS24HUB</span>
               </h1>
               <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 mx-auto lg:mx-0">
