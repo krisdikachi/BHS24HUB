@@ -34,19 +34,19 @@ const HeroSection = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             {/* Left: Text */}
             <div className="flex-1 space-y-4 text-center lg:text-left">
-              <h1 className="text-3xl font-bold tracking-tighter text-[#2ecc17] sm:text-5xl xl:text-6xl/none">
-                Discover the Joy of Reading with <span className="text-[#2ecc17]">BHS24HUB</span>
+              <h1 className="text-3xl font-bold tracking-tighter text-sky-400 sm:text-5xl xl:text-6xl/none">
+                Discover the Joy of Reading with <span className="text-sky-400">BHS24HUB</span>
               </h1>
               <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 mx-auto lg:mx-0">
                 An educational platform designed for students to read books, generate AI summaries, post reviews, and
                 access a built-in dictionary.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
-                <Button asChild className="bg-[#2ecc17] hover:bg-[#25a313] text-white">
+                <Button asChild className="bg-sky-400 hover:bg-[#25a313] text-white">
                   <Link href="/books">Explore Books</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link href="/about" className="text-[#2ecc17]">Learn More</Link>
+                  <Link href="/about" className="text-sky-400">Learn More</Link>
                 </Button>
               </div>
             </div>
@@ -82,7 +82,7 @@ const HeroSection = () => {
 
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
             <div className="flex flex-col items-center space-y-2 rounded-lg border-[#2ecc17] border p-6 shadow-sm">
-              <BookOpen className="h-12 w-12 text-[#2ecc17]" />
+              <BookOpen className="h-12 w-12 text-sky-400" />
               <h3 className="text-xl font-bold">Book Library</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
                 Access a wide range of books and novels for educational purposes.
