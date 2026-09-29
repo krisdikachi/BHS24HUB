@@ -1,126 +1,121 @@
 "use client";
 
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { MessageSquare, BookOpen, BookText, Search } from "lucide-react";
+import { BookOpen, Sparkles, Search, MessageSquare, ArrowUpRight } from "lucide-react";
 
-
-
-const heroImages = ["/lib5.png", "/lib6.png", "/lib4.png"];
+const features = [
+  {
+    title: "Book Library",
+    description: "Dozens of full novels and texts, free to read in the browser.",
+    href: "/books",
+    icon: BookOpen,
+    tab: "bg-[var(--brand)]",
+  },
+  {
+    title: "AI Novel Summarizer",
+    description: "Plot, characters, and themes for any novel — ours or the world's.",
+    href: "/summarizer",
+    icon: Sparkles,
+    tab: "bg-[var(--amber)]",
+  },
+  {
+    title: "Dictionary",
+    description: "Look up any word without leaving your reading.",
+    href: "/dictionary",
+    icon: Search,
+    tab: "bg-[var(--brand)]",
+  },
+  {
+    title: "Reviews",
+    description: "See what other students think, or leave your own.",
+    href: "/comments",
+    icon: MessageSquare,
+    tab: "bg-[var(--amber)]",
+  },
+];
 
 const HeroSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-  const router = useRouter();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex: number) => (prevIndex + 1) % heroImages.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleGetStarted = () => {
-    router.push("/books");
-  };
-
   return (
-    <div className="flex flex-col min-h-[calc(100vh-4rem)]">
-      {/* Hero Section */}
-      <section className="py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="flex flex-col">
+      {/* Hero */}
+      <section className="py-16 md:py-24 lg:py-28 bg-[var(--paper)] dark:bg-gray-950">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
-            {/* Left: Text */}
-            <div className="flex-1 space-y-4 text-center lg:text-left">
-              <h1 className="text-3xl font-bold tracking-tighter text-sky-400 sm:text-5xl xl:text-6xl/none">
-                Discover the Joy of Reading with <span className="text-sky-400">BHS24HUB</span>
+          <div className="flex flex-col lg:flex-row gap-10 items-center">
+            <div className="flex-1 space-y-5 text-center lg:text-left">
+              <h1 className="font-display text-4xl sm:text-5xl xl:text-6xl leading-[1.05] tracking-tight text-[var(--ink)] dark:text-white">
+                Read, understand, and remember more.
               </h1>
-              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 mx-auto lg:mx-0">
-                An educational platform designed for students to read books, generate AI summaries, post reviews, and
-                access a built-in dictionary.
+              <p className="max-w-[560px] text-gray-600 md:text-lg dark:text-gray-400 mx-auto lg:mx-0">
+                BHS24HUB is a free reading platform for students: a real book library, an AI that
+                summarizes any novel, and a built-in dictionary.
               </p>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
-                <Button asChild className="bg-sky-400 hover:bg-[#25a313] text-white">
-                  <Link href="/books">Explore Books</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link href="/about" className="text-sky-400">Learn More</Link>
-                </Button>
+              <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center lg:justify-start pt-2">
+                <Link
+                  href="/books"
+                  className="inline-flex items-center justify-center rounded-md bg-[var(--brand)] hover:bg-[var(--brand-dark)] text-white font-medium px-6 py-3 transition"
+                >
+                  Explore the Library
+                </Link>
+                <Link
+                  href="/summarizer"
+                  className="inline-flex items-center justify-center rounded-md border border-[var(--ink)]/20 dark:border-white/20 text-[var(--ink)] dark:text-white font-medium px-6 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition"
+                >
+                  Try the AI Summarizer
+                </Link>
               </div>
             </div>
-            {/* Right: Carousel */}
-          
-               <div className="mx-auto lg:ml-auto flex items-center justify-center">
-              <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
+
+            <div className="w-full lg:w-[440px] shrink-0">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-gray-900 rotate-1">
                 <img
-                  alt="Students reading"
+                  alt="Students reading at BHS24HUB"
                   className="object-cover w-full h-full"
                   src="/lib6.png"
                 />
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
 
-<section className="py-12 md:py-24 bg-white dark:bg-gray-950">
+      {/* Feature grid */}
+      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Platform Features</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Everything you need to enhance your reading experience
-              </p>
-                
-            </div>
+          <div className="max-w-2xl mx-auto text-center space-y-3 mb-12">
+            <h2 className="font-display text-3xl md:text-4xl text-[var(--ink)] dark:text-white">
+              Everything in one place
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400">
+              Pick where you want to start.
+            </p>
           </div>
-                     
 
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
-            <div className="flex flex-col items-center space-y-2 rounded-lg border-[#2ecc17] border p-6 shadow-sm">
-              <BookOpen className="h-12 w-12 text-sky-400" />
-              <h3 className="text-xl font-bold">Book Library</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                Access a wide range of books and novels for educational purposes.
-              </p>
-                <Link href="/books"><Button variant={"outline"} className="text-[#2ecc17] border-[#2ecc17] cursor-pointer"> More</Button></Link>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border-[#fff] rounded-lg border p-6 shadow-sm">
-              <BookText className="h-12 w-12 text-[#2ecc17]" />
-              <h3 className="text-xl font-bold">AI Summaries</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                Generate concise AI-powered summaries of any book or novel. <br />
-                                <Link href="/chat"><Button variant={"outline"} className="text-[#fff] mt-1.5 border-[#fff] cursor-pointer"> More</Button></Link>
-
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border-[#2ecc17] rounded-lg border p-6 shadow-sm">
-              <Search className="h-12 w-12 text-[#2ecc17]" />
-              <h3 className="text-xl font-bold">Dictionary</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                Look up definitions of words with our built-in dictionary tool.
-              </p>
-                              <Link href="/dictionary"><Button variant={"outline"} className="text-[#2ecc17] mt-4 border-[#2ecc17] cursor-pointer"> More</Button></Link>
-
-            </div>
-            <div className="flex flex-col items-center space-y-2 border-[#fff] rounded-lg border p-6 shadow-sm">
-              <MessageSquare className="h-12 w-12 text-[#2ecc17]" />
-              <h3 className="text-xl font-bold">Reviews</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                Share your thoughts and read reviews from other students.
-              </p>
-                              <Link href="/comments"><Button variant={"outline"} className="text-[#fff] border-[#fff] mt-4 cursor-pointer"> More</Button></Link>
-
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+            {features.map((feature) => (
+              <Link
+                key={feature.href}
+                href={feature.href}
+                className="group relative flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              >
+                <span className={`h-1.5 w-full ${feature.tab}`} />
+                <div className="p-6 flex flex-col gap-3 flex-1">
+                  <feature.icon className="h-8 w-8 text-[var(--brand)]" strokeWidth={1.75} />
+                  <h3 className="font-display text-lg text-[var(--ink)] dark:text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">
+                    {feature.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--brand)] group-hover:gap-1.5 transition-all">
+                    Open
+                    <ArrowUpRight size={15} />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-
-    
     </div>
   );
 };

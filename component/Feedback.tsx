@@ -64,7 +64,7 @@ const Feedback = () => {
 
       {/* Right Side */}
       <div className="md:w-1/2 w-full bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 flex flex-col justify-center px-6 py-8 md:px-10 bg-[#ffffff] text-gray-800">
-        <h2 className="text-3xl font-bold text-[#2ecc71] mb-4 text-center md:text-left">We Value Your Feedback</h2>
+        <h2 className="text-3xl font-bold text-sky-400 mb-4 text-center md:text-left">We Value Your Feedback</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-6">
           <textarea
@@ -81,7 +81,7 @@ const Feedback = () => {
           >
             {loading ? "Sending..." : "Send Feedback"}
           </button>
-          {msg && <p className="text-center text-[#2ecc71] font-medium">{msg}</p>}
+          {msg && <p className="text-center text-sky-400 font-medium">{msg}</p>}
         </form>
 
         {/* Divider */}
@@ -89,7 +89,7 @@ const Feedback = () => {
 
         {/* Recent Comments */}
         <div className="bg-emerald-50 rounded-xl p-5 shadow-sm">
-          <h3 className="text-lg font-bold text-emerald-700 mb-3 text-center">Recent Feedback</h3>
+          <h3 className="text-lg font-bold text-sky-500 mb-3 text-center">Recent Feedback</h3>
           <ul className="space-y-3">
             {comments.map((c, i) => (
               <li
@@ -102,7 +102,7 @@ const Feedback = () => {
             ))}
           </ul>
           <div className="text-center mt-3">
-            <a href="/comments" className="text-emerald-700 underline hover:text-emerald-900 text-sm font-medium">
+            <a href="/comments" className="text-sky-400 underline hover:text-emerald-900 text-sm font-medium">
               See all comments
             </a>
           </div>

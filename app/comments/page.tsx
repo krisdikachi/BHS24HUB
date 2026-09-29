@@ -32,7 +32,7 @@ export default function CommentsPage() {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <section className="max-w-4xl mx-auto py-12 px-4 space-y-8">
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold tracking-tight text-[#0EA5E9]">User Comments</h1>

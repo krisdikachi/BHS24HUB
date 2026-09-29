@@ -73,13 +73,17 @@ export default async function handler(req, res) {
   const ai = new GoogleGenAI({ apiKey });
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: prompt,
+    const interaction = await ai.interactions.create({
+      model: "gemini-3.8-flash",
+      input: prompt,
     });
 
-    const raw = response.text.trim();
+    const raw = (interaction.output_text || "").trim();
     const cleaned = raw.replace(/^```json\s*/i, "").replace(/^```\s*/i, "").replace(/```$/i, "").trim();
+
+    if (!cleaned) {
+      return res.status(502).json({ message: "Empty response from AI. Try again." });
+    }
 
     let parsed;
     try {

@@ -33,7 +33,6 @@ export default function Navbar() {
     { name: "Books", path: "/books" },
     { name: "Dictionary", path: "/dictionary" },
     { name: "Novel Summarizer", path: "/summarizer" },
-    { name: "Bhs24hub AI", path: "/chat" },
   ]
 
   const dropdownLinks = [

@@ -14,7 +14,6 @@ const Footer: React.FC = () => (
       <a href="/books" className="hover:underline font-semibold drop-shadow">Books</a>
       <a href="/dictionary" className="hover:underline font-semibold drop-shadow">Dictionary</a>
       <a href="/about" className="hover:underline font-semibold drop-shadow">About</a>
-      <a href="/chat" className="hover:underline font-semibold drop-shadow">Bhs24hub AI</a>
       <a href="/comments" className="hover:underline font-semibold drop-shadow">Reviews</a>
       <a href="/about/contact" className="hover:underline font-semibold drop-shadow">Contact</a>
       <span className="opacity-60 cursor-not-allowed font-semibold drop-shadow">Careers</span>
